@@ -9,7 +9,7 @@ class Mundo:
         #tamaño del mundo
         self.width = width
         self.height = height
-        self.arboles = [ Arbol(random.randint(0, width-40), random.randint(0, height-40)) for _ in range(10) ] #Se crean 20 arboles aleatoriamente en el mundo
+        self.arboles = [ Arbol(random.randint(0, width-40), random.randint(0, height-40)) for _ in range(20) ] #Se crean 20 arboles aleatoriamente en el mundo
         
         pasto_path = os.path.join('assets', 'img', 'Objetos', 'pasto.png')
         self.pasto_image = pygame.image.load(pasto_path).convert()
