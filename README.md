@@ -6,7 +6,7 @@ Juego en python utilizando pygame
   - crear = python -m venv .venv
   - activar en win = .venv\Scripts\activate
   - activar en linux = source .venv/bin/activate
-* 2- Instalar libreria pygame
+* 2- Instalar libreria pygame en entorno
   - instalar = pip install pygame
  
 * -- Proyecto en proceso -- 
