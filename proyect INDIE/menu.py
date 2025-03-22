@@ -10,8 +10,8 @@ pygame.init()
 info = pygame.display.Info()
 
 
-WIDTH, HEIGHT = info.current_w, info.current_h  #-Pantalla completa)
-ventana = pygame.display.set_mode((WIDTH, HEIGHT), pygame.FULLSCREEN)
+WIDTH, HEIGHT = 800, 600
+ventana = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("DEMO JUEGO DS")
 
 def main():
@@ -21,20 +21,19 @@ def main():
 
     while True:
         for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:
-                    pygame.quit()
-                    sys.exit()
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
                     
         #SECCION DE MOVIMIENTO DE PERSONAJE
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_a]:
             caracteres.move(-5, 0)
-        if keys[pygame.K_RIGHT]:
+        if keys[pygame.K_d]:
             caracteres.move(5, 0)
-        if keys[pygame.K_UP]:
+        if keys[pygame.K_w]:
             caracteres.move(0, -5)
-        if keys[pygame.K_DOWN]:
+        if keys[pygame.K_s]:
             caracteres.move(0, 5)
         # ------------
 

@@ -1,15 +1,23 @@
 import pygame
 import constants
+import os
 
 class Caracteres:
     def __init__(self, x, y): #posicion inicial
         self.x = x
         self.y = y
-        self.size = 28 # tamaño del personaje
-        self.inventory = {"wood": 0}# inventario
+        self.iventory = {"wood": 0}# inventario
+        image_path = os.path.join('assets', 'img', 'Caracteres', 'personaje.png')
+        self.image = pygame.image.load(image_path).convert_alpha()
+        self.image = pygame.transform.scale(self.image, (constants.PERSONAJE, constants.PERSONAJE))
+        self.size = self.image.get_width()
 
     def draw(self, screen):
-        pygame.draw.rect(screen, constants.BLUE, (self.x, self.y, self.size, self.size))
+        screen.blit(self.image, (self.x, self.y))
+
+
+
+
 
     def move(self, dx, dy):
         self.x += dx
