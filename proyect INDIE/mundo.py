@@ -1,7 +1,6 @@
 import pygame
 import constants
-from elementos import Arbol
-from elementos import Piedras
+from elementos import Arbol, Piedras
 import random
 import os
 
@@ -21,16 +20,14 @@ class Mundo:
 
 
 
-    def draw(self, screen):
+    def draw(self, ventana):
         for y in range(0, self.width, constants.PASTO):
             for x in range(0, self.height, constants.PASTO):
-                screen.blit(self.pasto_image, (x, y))
-
-
-
+                ventana.blit(self.pasto_image, (x, y))
 
         for arbol in self.arboles:
-            arbol.draw(screen)
+            arbol.draw(ventana)
 
         for piedra in self.piedras:
-            piedra.draw(screen)
+            piedra.draw(ventana)
+

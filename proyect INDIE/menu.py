@@ -3,7 +3,6 @@ import sys
 import constants
 from caracteres import Caracteres
 from mundo import Mundo
-from elementos import Piedras
 
 
 

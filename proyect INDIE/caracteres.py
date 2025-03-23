@@ -12,8 +12,8 @@ class Caracteres:
         self.image = pygame.transform.scale(self.image, (constants.PERSONAJE, constants.PERSONAJE))
         self.size = constants.PERSONAJE  # <- Forzar tamaño correcto
 
-    def draw(self, screen):
-        screen.blit(self.image, (self.x, self.y))
+    def draw(self, ventana):
+        ventana.blit(self.image, (self.x, self.y))
 
 
 
