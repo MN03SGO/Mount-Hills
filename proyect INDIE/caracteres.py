@@ -85,9 +85,3 @@ class Caracteres:
                 ventana.blit(self.item_images[item.lower()], (item_x, item_y))
                 texto = item_fuente.render(f"{item.capitalize()}: {cantidad}", True, constants.WHITE)
                 ventana.blit(texto, (item_x + 40, item_y)) 
-
-
-
-    
-            
-        

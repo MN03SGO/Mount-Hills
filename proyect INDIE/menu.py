@@ -54,23 +54,17 @@ def main():
 
         # iNTERACCION TECLAS DE MOVIMIENTO
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_a]:
-            caracteres.move(-5, 0, mundo)
-        if keys[pygame.K_d]:
-            caracteres.move(5, 0, mundo)
-        if keys[pygame.K_w]:
-            caracteres.move(0, -5, mundo)
-        if keys[pygame.K_s]:
-            caracteres.move(0, 5, mundo)
-        if keys[pygame.K_LEFT]:
-            caracteres.move(-5, 0,mundo)
-        if keys[pygame.K_RIGHT]:
-            caracteres.move(5, 0, mundo)
-        if keys[pygame.K_UP]:
-            caracteres.move(0, -5, mundo)
-        if keys[pygame.K_DOWN]:
-            caracteres.move(0, 5, mundo)
-        
+        move_x = 0
+        move_y = 0
+        if keys[pygame.K_a] or keys[pygame.K_LEFT]:
+            move_x = -5
+        if keys[pygame.K_d] or keys[pygame.K_RIGHT]:
+            move_x = 5
+        if keys[pygame.K_w] or keys[pygame.K_UP]:
+            move_y = -5
+        if keys[pygame.K_s] or keys[pygame.K_DOWN]:
+            move_y = 5
+        caracteres.move(move_x, move_y, mundo)
     
 
         ventana.fill(constants.WHITE)
