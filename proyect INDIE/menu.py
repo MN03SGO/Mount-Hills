@@ -37,12 +37,19 @@ def main():
     safe_x, safe_y = Spawn_Personaje(mundo)
     caracteres = Caracteres(safe_x, safe_y)
 
+
+    #INTERACCIONES
     while True:
+        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_e:
+                    caracteres.interact(mundo)
 
+        # iNTERACCION TECLAS DE MOVIMIENTO
         keys = pygame.key.get_pressed()
         if keys[pygame.K_a]:
             caracteres.move(-5, 0, mundo)
@@ -52,6 +59,16 @@ def main():
             caracteres.move(0, -5, mundo)
         if keys[pygame.K_s]:
             caracteres.move(0, 5, mundo)
+        if keys[pygame.K_LEFT]:
+            caracteres.move(-5, 0,mundo)
+        if keys[pygame.K_RIGHT]:
+            caracteres.move(5, 0, mundo)
+        if keys[pygame.K_UP]:
+            caracteres.move(0, -5, mundo)
+        if keys[pygame.K_DOWN]:
+            caracteres.move(0, 5, mundo)
+        
+    
 
         ventana.fill(constants.WHITE)
         mundo.draw(ventana)
