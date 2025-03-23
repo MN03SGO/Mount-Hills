@@ -20,9 +20,9 @@ class Mundo:
 
     def draw(self, screen):
         for y in range(0, self.width, constants.PASTO):
-            for  x in range(0, self.height, constants.PASTO):
+            for x in range(0, self.height, constants.PASTO):
                 screen.blit(self.pasto_image, (x, y))
-        
+
 
 
 
