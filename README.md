@@ -1,4 +1,4 @@
-# Mount-Hills
+# Mount-Hill
 Juego en python utilizando pygame
 
 
