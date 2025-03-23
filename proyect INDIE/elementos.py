@@ -17,7 +17,7 @@ class Arbol:
     def draw(self, screen):
         screen.blit(self.image, (self.x, self.y))
 
-class piedras_pequena:
+class Piedras:
     def __init__(self,x,y):
         self.x = x
         self.y = y
@@ -26,3 +26,7 @@ class piedras_pequena:
         self.image = pygame.image.load(piedras_path).convert_alpha()
         self.image = pygame.transform.scale(self.image, (constants.ARBOLES, constants.ARBOLES))
         self.size = self.image.get_width()
+
+    def draw(self, screen):
+        screen.blit(self.image, (self.x, self.y))
+    

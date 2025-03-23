@@ -3,6 +3,9 @@ import sys
 import constants
 from caracteres import Caracteres
 from mundo import Mundo
+from elementos import Piedras
+
+
 
 
 pygame.init()
@@ -28,13 +31,13 @@ def main():
         #SECCION DE MOVIMIENTO DE PERSONAJE
         keys = pygame.key.get_pressed()
         if keys[pygame.K_a]:
-            caracteres.move(-5, 0)
+            caracteres.move(-5, 0, mundo)
         if keys[pygame.K_d]:
-            caracteres.move(5, 0)
+            caracteres.move(5, 0, mundo)
         if keys[pygame.K_w]:
-            caracteres.move(0, -5)
+            caracteres.move(0, -5, mundo)
         if keys[pygame.K_s]:
-            caracteres.move(0, 5)
+            caracteres.move(0, 5, mundo)
         # ------------
 
 

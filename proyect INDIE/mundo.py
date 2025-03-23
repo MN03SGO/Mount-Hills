@@ -1,6 +1,7 @@
 import pygame
 import constants
 from elementos import Arbol
+from elementos import Piedras
 import random
 import os
 
@@ -9,7 +10,9 @@ class Mundo:
         #tamaño del mundo
         self.width = width
         self.height = height
-        self.arboles = [ Arbol(random.randint(0, width-40), random.randint(0, height-40)) for _ in range(20) ] #Se crean 20 arboles aleatoriamente en el mundo
+        self.arboles = [ Arbol(random.randint(0, width-constants.ARBOLES), random.randint(0, height-constants.ARBOLES)) for _ in range(30) ] #Se crean 20 arboles aleatoriamente en el mundo
+        self.piedras = [ Piedras(random.randint(0, width-constants.PIEDRAS), random.randint(0, height-constants.PIEDRAS)) for _ in range(20) ] #Se crean 20 piedras aleatoriamente en el mundo
+
         
         pasto_path = os.path.join('assets', 'img', 'Objetos', 'pasto.png')
         self.pasto_image = pygame.image.load(pasto_path).convert()
@@ -28,3 +31,6 @@ class Mundo:
 
         for arbol in self.arboles:
             arbol.draw(screen)
+
+        for piedra in self.piedras:
+            piedra.draw(screen)
