@@ -6,7 +6,7 @@ class Arbol:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.wood = 5
+        self.madera = 5
 
         arboles_path = os.path.join('assets', 'img', 'Objetos', 'arbol.png')
         self.image = pygame.image.load(arboles_path).convert_alpha()
@@ -16,11 +16,16 @@ class Arbol:
     def draw(self, ventana):
         ventana.blit(self.image, (self.x, self.y))
 
+    def cortar(self):
+        if self.madera > 0:
+            self.madera -= 1
+            return True
+
 class Piedras:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.stone = 1
+        self.piedra = 1
 
         piedras_path = os.path.join('assets', 'img', 'Objetos', 'piedra.png')
         self.image = pygame.image.load(piedras_path).convert_alpha()

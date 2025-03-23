@@ -36,11 +36,11 @@ def main():
     #Para que aparesca el personaje
     safe_x, safe_y = Spawn_Personaje(mundo)
     caracteres = Caracteres(safe_x, safe_y)
-
+    
+    inventario = False
 
     #INTERACCIONES
-    while True:
-        
+    while True: 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -48,6 +48,9 @@ def main():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_e:
                     caracteres.interact(mundo)
+                if event.key == pygame.K_i:
+                    inventario = not inventario
+
 
         # iNTERACCION TECLAS DE MOVIMIENTO
         keys = pygame.key.get_pressed()
@@ -73,6 +76,16 @@ def main():
         ventana.fill(constants.WHITE)
         mundo.draw(ventana)
         caracteres.draw(ventana)
+
+        if inventario:
+            caracteres.draw_inventario(ventana)
+        else:
+            mundo.draw_inventario(ventana, caracteres)
+
+
+
+        
+
         pygame.display.flip()
         clock.tick(60)
 

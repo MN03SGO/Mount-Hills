@@ -12,14 +12,10 @@ class Mundo:
         self.arboles = [ Arbol(random.randint(0, width-constants.ARBOLES), random.randint(0, height-constants.ARBOLES)) for _ in range(20) ] #Se crean 20 arboles aleatoriamente en el mundo
         self.piedras = [ Piedras(random.randint(0, width-constants.PIEDRAS), random.randint(0, height-constants.PIEDRAS)) for _ in range(20) ] #Se crean 20 piedras aleatoriamente en el mundo
 
-        
         pasto_path = os.path.join('assets', 'img', 'Objetos', 'pasto.png')
         self.pasto_image = pygame.image.load(pasto_path).convert()
         self.pasto_image = pygame.transform.scale(self.pasto_image,( constants.PASTO, constants.HEIGHT))
     
-
-
-
     def draw(self, ventana):
         for y in range(0, self.width, constants.PASTO):
             for x in range(0, self.height, constants.PASTO):
@@ -31,4 +27,13 @@ class Mundo:
         for arbol in self.arboles:
             arbol.draw(ventana)
 
-        
+    #INVENTARIO
+    def draw_inventario(self, ventana, caracteres):
+        font = pygame.font.Font(None, 36)
+        texto_madera = font.render(f"Madera: {caracteres.inventario['Madera']}", True, constants.WHITE) 
+
+        texto_piedra = font.render(f"Piedra: {caracteres.inventario['Piedra']}", True, constants.WHITE)
+
+        ventana.blit(texto_madera, (10, 10))
+        ventana.blit(texto_piedra, (10, 50))
+
