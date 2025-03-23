@@ -73,9 +73,7 @@ def main():
 
         if inventario:
             caracteres.draw_inventario(ventana)
-        else:
-            mundo.draw_inventario(ventana, caracteres)
-
+        
 
 
         
