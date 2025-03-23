@@ -29,11 +29,6 @@ class Mundo:
 
     #INVENTARIO
     def draw_inventario(self, ventana, caracteres):
-        font = pygame.font.Font(None, 36)
-        texto_madera = font.render(f"Madera: {caracteres.inventario['Madera']}", True, constants.WHITE) 
-
-        texto_piedra = font.render(f"Piedra: {caracteres.inventario['Piedra']}", True, constants.WHITE)
-
-        ventana.blit(texto_madera, (10, 10))
-        ventana.blit(texto_piedra, (10, 50))
-
+        font = pygame.font.Font(None, 22)
+        instrucc_text  = font.render("Tecla I para abrir inventario", True, constants.WHITE)
+        ventana.blit(instrucc_text, (10,10))
