@@ -11,7 +11,9 @@ WIDTH, HEIGHT = 800, 600
 ventana = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("DEMO JUEGO DS")
 
-def find_safe_spawn(mundo):
+def Spawn_Personaje(mundo):
+    #Spawnea personae en liugar libre de arbol
+
     while True:
         x = random.randint(0, constants.WIDTH - constants.PERSONAJE)
         y = random.randint(0, constants.HEIGHT - constants.PERSONAJE)
@@ -31,8 +33,8 @@ def main():
     clock = pygame.time.Clock()
     mundo = Mundo(constants.WIDTH, constants.HEIGHT)
 
-    # Encontrar spawn seguro
-    safe_x, safe_y = find_safe_spawn(mundo)
+    #Para que aparesca el personaje
+    safe_x, safe_y = Spawn_Personaje(mundo)
     caracteres = Caracteres(safe_x, safe_y)
 
     while True:
