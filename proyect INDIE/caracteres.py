@@ -27,9 +27,7 @@ class Caracteres:
             if self.check_collision(new_x, new_y, arbol):
                 return
             
-        for piedra in mundo.piedras:
-            if self.check_collision(new_x, new_y, piedra):
-                return
+    
 
             
         self.x = new_x

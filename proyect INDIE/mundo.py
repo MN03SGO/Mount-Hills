@@ -9,7 +9,7 @@ class Mundo:
         #tamaño del mundo
         self.width = width
         self.height = height
-        self.arboles = [ Arbol(random.randint(0, width-constants.ARBOLES), random.randint(0, height-constants.ARBOLES)) for _ in range(30) ] #Se crean 20 arboles aleatoriamente en el mundo
+        self.arboles = [ Arbol(random.randint(0, width-constants.ARBOLES), random.randint(0, height-constants.ARBOLES)) for _ in range(20) ] #Se crean 20 arboles aleatoriamente en el mundo
         self.piedras = [ Piedras(random.randint(0, width-constants.PIEDRAS), random.randint(0, height-constants.PIEDRAS)) for _ in range(20) ] #Se crean 20 piedras aleatoriamente en el mundo
 
         
@@ -25,9 +25,10 @@ class Mundo:
             for x in range(0, self.height, constants.PASTO):
                 ventana.blit(self.pasto_image, (x, y))
 
-        for arbol in self.arboles:
-            arbol.draw(ventana)
-
         for piedra in self.piedras:
             piedra.draw(ventana)
 
+        for arbol in self.arboles:
+            arbol.draw(ventana)
+
+        
