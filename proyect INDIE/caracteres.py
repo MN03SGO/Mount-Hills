@@ -31,7 +31,9 @@ class Caracteres:
 
     def draw(self, ventana):
         ventana.blit(self.image, (self.x, self.y))
+        self.draw_estado_barra(ventana)
 
+    # Movimiento del personaje
     def move(self, dx, dy, mundo):
         new_x = self.x + dx
         new_y = self.y + dy
@@ -45,6 +47,7 @@ class Caracteres:
         self.x = max(0, min(self.x, constants.WIDTH - self.size))
         self.y = max(0, min(self.y, constants.HEIGHT - self.size))
 
+        # Perdida de energia por movimiento
         if dx != 0 or dy != 0: 
             self.actualizar_Energia(-0.05)
         
@@ -135,16 +138,16 @@ class Caracteres:
         pygame.draw.rect(ventana, constants.HAMBRE_COLOR,
                     (x_offset, y_offset, bar_width*(self.hambre/ constants.MAX_HABRE),bar_height))
         # BARRA DE SED
-        pygame.dra
+        
         y_offset += 15
         pygame.draw.rect(ventana, constants.BAR_BACKGROUND_COLOR,
                     (x_offset, y_offset, bar_width, bar_height))
         pygame.draw.rect(ventana, constants.SED_COLOR,
                     (x_offset, y_offset, bar_width*(self.sed/ constants.MAX_SED),bar_height))
         
-        def actualizar_estado(self):
-            self.actualizar_Hambre(-0.01)
-            self.actualizar_Sed(-0.02)
+    def actualizar_estado(self):
+        self.actualizar_Hambre(-0.01)
+        self.actualizar_Sed(-0.02)
 
-            if self.hambre < constants.MAX_HABRE * 0.2 or self.sed < constants.MAX_SED * 0.2:
-                self.actualizar_Energia(-0.05)
+        if self.hambre < constants.MAX_HABRE * 0.2 or self.sed <    constants.MAX_SED * 0.2:
+            self.actualizar_Energia(-0.05)
