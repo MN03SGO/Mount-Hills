@@ -82,8 +82,9 @@ def main():
 
         status_update_timer += dt
         if status_update_timer > constants.STATUS_UPDATE_TIME:
-            caracteres.actualizar_Hambre(-0.1)
-            caracteres.actualizar_Sed(-0.1)
+
+            caracteres.actualizar_Hambre(-1)
+            caracteres.actualizar_Sed(-1)
             status_update_timer = 0
         
         if caracteres.energia == 0 or caracteres.hambre == 0 or caracteres.sed == 0:
