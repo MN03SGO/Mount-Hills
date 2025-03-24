@@ -45,8 +45,8 @@ class Caracteres:
         self.x = max(0, min(self.x, constants.WIDTH - self.size))
         self.y = max(0, min(self.y, constants.HEIGHT - self.size))
 
-
-        self.actualizar_Energia(-0.1)
+        if dx != 0 or dy != 0: 
+            self.actualizar_Energia(-0.05)
         
 
 
@@ -121,7 +121,7 @@ class Caracteres:
 
         #BARRA
         
-        # BARRA DE EMERGIA
+        # BARRA DE ENERGIA
         pygame.draw.rect(ventana, constants.BAR_BACKGROUND_COLOR, 
                     (x_offset, y_offset, bar_width, bar_height))
     
@@ -146,7 +146,5 @@ class Caracteres:
             self.actualizar_Hambre(-0.01)
             self.actualizar_Sed(-0.02)
 
-            if self.hambre < constants.MAX_HABRE * 0.2 or self.vida < constants.MAX_SED * 0.2:
-                self.actualizar_Energia(-0.05)
-            else:
+            if self.hambre < constants.MAX_HABRE * 0.2 or self.sed < constants.MAX_SED * 0.2:
                 self.actualizar_Energia(-0.05)
