@@ -12,7 +12,7 @@ class Caracteres:
         
          #cargar la hoja de animaciones
         image_path = os.path.join('assets', 'img', 'Caracteres', 'Player.png')
-        self.image = pygame.image.load(image_path).convert_alpha()
+        self.sprite_sheet = pygame.image.load(image_path).convert_alpha()
         self.image = pygame.transform.scale(self.image, (constants.PERSONAJE, constants.PERSONAJE))
         self.size = constants.PERSONAJE  # <- Forzar tamaño correcto
 
@@ -52,12 +52,19 @@ class Caracteres:
                              self.frame_size,
                              self.frame_size))
                 
-                if constants.PERSONAJE != self.frame_size:
-                    surface = pygame.transform.scale(surface,(constants.PERSONAJE, constants.PERSONAJE))
+                
+            if constants.PERSONAJE != self.frame_size:
+                surface = pygame.transform.scale(surface,(constants.PERSONAJE, constants.PERSONAJE))
                 frames.append(surface)
             animations[state] = frames
             
         return animations
+    
+    def update_animation(self):
+        current_time = pygame.time.get_ticks()
+        if current_time - self.animation_timer > self.animation_delay:
+            self.animation_timer = current_time
+            self.animation_frame = (self.animation_frame + 1) % 6
 
     def load_item_images(self, filename ):
         path = os.path.join('assets', 'img', 'Objetos', filename)
@@ -66,10 +73,10 @@ class Caracteres:
         return image
 
     def draw(self, ventana):
-       current_frame = self.animations[self.current_state][self.animation_frame]
-       if self.facing_left:
+      current_frame = self.animations[self.current_state][self.animation_frame]
+      if self.facing_left:
            current_frame = pygame.transform.flip(current_frame, True, False)
-       ventana.blit(current_frame, (self.x, self.y))
+      ventana.blit(current_frame, (self.x, self.y))
 
     def move(self, dx, dy, mundo):
         self.moving = dx != 0 or dy != 0
