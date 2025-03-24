@@ -38,10 +38,3 @@ STATUS_UPDATE_TIME = 1000
 
 
 
-
-# DIA/NOCHE
-#DURACION_DIA = 60,000 # Duracion un minuro 
-#AMANECER = 10,000 
-
-
-

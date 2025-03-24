@@ -34,4 +34,3 @@ class Piedras:
 
     def draw(self, ventana):
         ventana.blit(self.image, (self.x, self.y))
-
