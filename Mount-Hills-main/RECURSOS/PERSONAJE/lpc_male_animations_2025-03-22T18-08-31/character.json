@@ -1,0 +1,116 @@
+{
+  "bodyTypeName": "male",
+  "url": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_olive&head=Human_male_olive&shadow=Shadow_shadow&shoulders=none_Legion&clothes=none_Longsleeve&overalls=Overalls_blue&apron=none_Apron&legs=none_Legion_skirt&weapon=none_Gnarled_staff&shoes=Sandals_black&hair=none_Plain&eyebrows=Thick_Eyebrows_ash&nose=Button_nose_olive&facial_eyes=none_Glasses",
+  "spritesheets": "https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/spritesheets/",
+  "version": 1,
+  "datetime": "22/3/2025, 12:04:02 p. m.",
+  "credits": [
+    {
+      "fileName": "shadow/adult/shadow.png",
+      "licenses": "CC0",
+      "authors": "drjamgo@hotmail.com",
+      "urls": "https://opengameart.org/content/shadow-for-lpc-sprite",
+      "notes": ""
+    },
+    {
+      "fileName": "body/bodies/male/olive.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,JaidynReiman,Benjamin K. Smith (BenCreating),Evert,Eliza Wyatt (ElizaWy),TheraHedwig,MuffinElZangano,Durrani,Johannes Sjölund (wulax),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-medieval-fantasy-character-sprites,https://opengameart.org/content/lpc-male-jumping-animation-by-durrani,https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle,https://opengameart.org/content/lpc-revised-character-basics,https://opengameart.org/content/lpc-be-seated,https://opengameart.org/content/lpc-runcycle-for-male-muscular-and-pregnant-character-bases-with-modular-heads,https://opengameart.org/content/lpc-jump-expanded,https://opengameart.org/content/lpc-character-bases",
+      "notes": "see details at https://opengameart.org/content/lpc-character-bases; 'Thick' Male Revised Run/Climb by JaidynReiman (based on ElizaWy's LPC Revised)"
+    },
+    {
+      "fileName": "head/heads/human/male/olive.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 3.0",
+      "authors": "bluecarrot16,Benjamin K. Smith (BenCreating),Stephen Challener (Redshrike)",
+      "urls": "https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles,https://opengameart.org/content/lpc-character-bases",
+      "notes": "original head by Redshrike, tweaks by BenCreating, modular version by bluecarrot16"
+    },
+    {
+      "fileName": "head/nose/button/adult/olive.png",
+      "licenses": "GPL 3.0,CC-BY-SA 3.0",
+      "authors": "Thane Brimhall (pennomi),laetissima,Matthew Krohn (makrohn)",
+      "urls": "https://opengameart.org/content/lpc-base-character-expressions",
+      "notes": ""
+    },
+    {
+      "fileName": "eyes/eyebrows/thick/adult/ash.png",
+      "licenses": "OGA-BY 3.0",
+      "authors": "ElizaWy",
+      "urls": "https://github.com/ElizaWy/LPC/tree/main/Characters/Hair,https://opengameart.org/content/lpc-expanded-sit-run-jump-more",
+      "notes": ""
+    },
+    {
+      "fileName": "torso/aprons/overalls/male/blue.png",
+      "licenses": "OGA-BY 3.0,GPL 3.0",
+      "authors": "ElizaWy,bluecarrot16,JaidynReiman",
+      "urls": "https://opengameart.org/content/lpc-revised-character-basics,http://opengameart.org/content/lpc-clothing-updates",
+      "notes": "original overalls by ElizaWy, extended to all animation frames, adapted from teen to male base, and edited for v3 bases by bluecarrot16; extended to combat animations by JaidynReiman"
+    },
+    {
+      "fileName": "feet/sandals/male/black.png",
+      "licenses": "OGA-BY 3.0,CC-BY-SA 3.0,GPL 2.0,GPL 3.0",
+      "authors": "Nila122,JaidynReiman,Matthew Krohn (makrohn),Johannes Sjölund (wulax)",
+      "urls": "https://opengameart.org/content/lpc-roman-armor,http://opengameart.org/content/lpc-clothing-updates,https://opengameart.org/content/lpc-expanded-socks-shoes",
+      "notes": "edited for v3 bases by bluecarrot16, Jump/Sit/Emote/Run/Revised Combat by JaidynReiman"
+    }
+  ],
+  "layers": [
+    {
+      "fileName": "shadow/adult/shadow.png",
+      "zPos": 0,
+      "parentName": "shadow",
+      "name": "Shadow",
+      "variant": "shadow",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering"
+    },
+    {
+      "fileName": "body/bodies/male/olive.png",
+      "zPos": 10,
+      "parentName": "body",
+      "name": "Body_color",
+      "variant": "olive",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "feet/sandals/male/black.png",
+      "zPos": 15,
+      "parentName": "shoes",
+      "name": "Sandals",
+      "variant": "black",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "torso/aprons/overalls/male/blue.png",
+      "zPos": 38,
+      "parentName": "overalls",
+      "name": "Overalls",
+      "variant": "blue",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "head/heads/human/male/olive.png",
+      "zPos": 100,
+      "parentName": "head",
+      "name": "Human_male",
+      "variant": "olive",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "head/nose/button/adult/olive.png",
+      "zPos": 105,
+      "parentName": "nose",
+      "name": "Button_nose",
+      "variant": "olive",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    },
+    {
+      "fileName": "eyes/eyebrows/thick/adult/ash.png",
+      "zPos": 106,
+      "parentName": "eyebrows",
+      "name": "Thick_Eyebrows",
+      "variant": "ash",
+      "supportedAnimations": "spellcast,thrust,walk,slash,shoot,hurt,watering,idle,jump,run,sit,emote,climb,combat,1h_slash,1h_backslash,1h_halfslash"
+    }
+  ]
+}
