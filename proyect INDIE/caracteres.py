@@ -13,23 +13,12 @@ class Caracteres:
 
 
         # Cargar la hoja de animaciones
-        image_path = os.path.join('assets', 'img', 'Caracteres', 'Player.png')
+        image_path = os.path.join('assets', 'img', 'Caracteres', 'Personaje.png')
         self.image = pygame.image.load(image_path).convert_alpha()
         self.image = pygame.transform.scale(self.image, (constants.PERSONAJE, constants.PERSONAJE))
         self.sprite_sheet = self.image  # Asignar sprite_sheet correctamente
         self.size = constants.PERSONAJE  
 
-        # Propiedades de la animación
-        self.frame_size = FRAME_SIZE
-        self.animation_frame = 0
-        self.animation_timer = 0
-        self.animation_delay = ANIMATION_DELAY
-        self.current_state = IDLE_DOWN
-        self.moving = False
-        self.facing_left = False 
-        
-        # Cargar animaciones
-        self.animations = self.load_animations()
         # Cargar imágenes de objetos del inventario
         self.item_images = {
             "madera": self.load_item_images("madera.png"),
@@ -39,42 +28,6 @@ class Caracteres:
         self.sed = constants.MAX_SED
         self.energia = constants.MAX_ENERGIA
         self.hambre = constants.MAX_HABRE
-
-
-    def load_animations(self):
-        animations = {}
-        for state in range(6):  # 6 animaciones
-            frames = []
-            for frame in range(BASIC_FRAMES):
-                surface = pygame.Surface((self.frame_size, self.frame_size), pygame.SRCALPHA)
-                surface.blit(self.sprite_sheet, (0, 0),
-                    (frame * self.frame_size,
-                    state * self.frame_size,
-                    self.frame_size,
-                    self.frame_size))
-                
-            if constants.PERSONAJE != self.frame_size:
-                surface = pygame.transform.scale(surface, (constants.PERSONAJE, constants.PERSONAJE))
-                frames.append(surface)
-            animations[state] = frames
-        return animations
-    
-    # ACTUALIZAR ANIMACION
-    def update_animation(self):
-        current_time = pygame.time.get_ticks()
-        if current_time - self.animation_timer > self.animation_delay:
-            self.animation_timer = current_time
-            self.animation_frame = (self.animation_frame + 1) % 6 
-    
-
-
-
-
-
-
-
-
-
 
 
     # IMAGENES DEL INVENTARIO
@@ -88,36 +41,9 @@ class Caracteres:
         ventana.blit(self.image, (self.x, self.y))
         self.draw_estado_barra(ventana)
 
-
-
-
-
     # Movimiento del personaje
     def move(self, dx, dy, mundo):
         self.moving = dx != 0 or dy != 0
-        
-        if self.moving:
-            if dy > 0:
-                self.current_state = WALK_DOWN
-                self.facing_left = False
-            elif dy < 0:
-                self.current_state = WALK_UP
-                self.facing_left = False
-            elif dx > 0:
-                self.current_state = WALK_RIGHT
-                self.facing_left = False
-            elif dx < 0:
-                self.current_state = WALK_RIGHT
-                self.facing_left = True
-        else:
-            if self.current_state == WALK_DOWN:
-                self.current_state = IDLE_DOWN
-            if self.current_state == WALK_UP:
-                self.current_state = IDLE_UP
-            if self.current_state == WALK_RIGHT:
-                self.current_state = IDLE_RIGHT
-            
-        
         
         new_x = self.x + dx
         new_y = self.y + dy
