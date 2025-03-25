@@ -15,6 +15,7 @@ class Mundo:
         pasto_path = os.path.join('assets', 'img', 'Objetos', 'pasto.png')
         self.pasto_image = pygame.image.load(pasto_path).convert()
         self.pasto_image = pygame.transform.scale(self.pasto_image,( constants.PASTO, constants.HEIGHT))
+        
     
     def draw(self, ventana):
         for y in range(0, self.width, constants.PASTO):

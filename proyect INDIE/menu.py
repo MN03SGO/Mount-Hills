@@ -4,12 +4,25 @@ import constants
 from caracteres import Caracteres
 from mundo import Mundo
 import random
+import os
 
 pygame.init()
 
 WIDTH, HEIGHT = 800, 600
 ventana = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("DEMO JUEGO DS")
+
+
+
+# Cargar música de fondo
+musica_ruta = "assets/img/Sonido/sonido.wav"
+if os.path.exists(musica_ruta):
+    pygame.mixer.music.load(musica_ruta)
+    pygame.mixer.music.set_volume(0.5)  # Ajustar volumen
+    pygame.mixer.music.play(-1)  # Reproducir en bucle
+else:
+    print(f"Error: No se encontró el archivo de música en {musica_ruta}")
+
 
 def Spawn_Personaje(mundo):
     #Spawnea personae en liugar libre de arbol
